@@ -1,0 +1,21 @@
+#title {
+    min-height: 5em;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: url("images/papyrus.png");
+}
+
+
+ #card1,
+ #card2,
+ #card3,
+ #card4,
+ #card5
+ {
+    background: lightblue;
+}

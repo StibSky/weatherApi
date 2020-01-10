@@ -6,29 +6,65 @@
     <link href="style.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<label for="cityInput">City:</label>
-<input type="text" name="city" id="cityInput" />
-<button id="click">generate</button>
-
-
-<div class="display">
-    <h1 id="cityname"></h1>
-    <p id="description1"> </p>
-    <p id="temperature1"> </p>
-    <p id="description2"> </p>
-    <p id="temperature2"></p>
-    <p id="description3"> </p>
-    <p id="temperature3"></p>
-    <p id="description4"> </p>
-    <p id="temperature4"></p>
-    <p id="description5"> </p>
-    <p id="temperature5"></p>
-
-
+<div class="d-flex justify-content-center m-5">
+    <input type="text" name="city" id="cityInput"/>
+    <button id="click" class="ml-2">generate</button>
 </div>
+
+<div id="title">
+<h1 id="cityname" class="d-flex justify-content-center">City</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="card p-2 m-2" style="width: 18rem;height: 10rem;" id="card1">
+    <img src="..." class="card-img-top" alt="...">
+        <div class="card-body" >
+            <h5 class="card-title"> <strong>Today </strong></h5>
+            <p class="card-text" id="description1"></p>
+         <p class="card-text" id="temperature1"></p>
+        </div>
+    </div>
+    <div class="card p-2 m-2" style="width: 18rem;height: 10rem;" id="card2" >
+        <!--<img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+            <h5 class="card-title"> <strong>Tomorrow</strong></h5>
+            <p class="card-text" id="description2"></p>
+            <p class="card-text" id="temperature2"></p>
+         </div>
+    </div>
+    <div class="card p-2 m-2" style="width: 18rem;height: 10rem;" id="card3">
+        <!--<img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+         <h5 class="card-title"> <strong>Two days from now</strong></h5>
+            <p class="card-text" id="description3"></p>
+            <p class="card-text" id="temperature3"></p>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="card p-2 m-2" style="width: 18rem;height: 10rem;" id="card4">
+        <!--<img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+            <h5 class="card-title"> <strong>Three days from now</strong></h5>
+            <p class="card-text" id="description4"></p>
+            <p class="card-text" id="temperature4"></p>
+        </div>
+    </div>
+    <div class="card p-2 m-2" style="width: 18rem;height: 10rem;" id="card5">
+        <!--<img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+         <h5 class="card-title"> <strong>Four days from now</strong></h5>
+         <p class="card-text" id="description5"></p>
+         <p class="card-text" id="temperature5"></p>
+        </div>
+    </div>
+</div>
+
+
 
 
 

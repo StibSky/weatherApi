@@ -55,12 +55,14 @@ button.addEventListener("click", function () {
             let dayThreeDescription = [];
             let dayFourDescription = [];
             let dayFiveDescription = [];
+        
             for (let i = 0; i < 8 ; i++) {
                 dayOneDescription.push(dayOne[i]['weather'][0]['description']);
                 dayTwoDescription.push(dayTwo[i]['weather'][0]['description']);
                 dayThreeDescription.push(dayThree[i]['weather'][0]['description']);
                 dayFourDescription.push(dayFour[i]['weather'][0]['description']);
-                dayFiveDescription.push(dayFive[i]['weather'][0]['description'])
+                dayFiveDescription.push(dayFive[i]['weather'][0]['description']);
+
             }
 
 
@@ -69,7 +71,7 @@ button.addEventListener("click", function () {
 
 
             //average temperature per day
-            let averageTemp = arr => ((arr.reduce((a,b) => a + b, 0) / arr.length)-273.15).toFixed(2);
+            let averageTemp = arr => Math.floor(((arr.reduce((a,b) => a + b, 0) / arr.length)-273.15));
             let tempOne = averageTemp(dayOneTemps);
             let tempTwo = averageTemp(dayTwoTemps);
             let tempThree = averageTemp(dayThreeTemps);
@@ -102,19 +104,21 @@ button.addEventListener("click", function () {
 
 
             // fill in temperatures
-            tempday1.innerHTML = "temperature today: " +tempOne + " °Celcius";
-            tempday2.innerHTML = "temperature tomorrow: " +tempTwo + " °Celcius";
-            tempday3.innerHTML = "temperature two days from now " +tempThree + " °Celcius";
-            tempday4.innerHTML = "temperature three days from now: " +tempFour + " °Celcius";
-            tempday5.innerHTML = "temperature four days from now: " +tempFive + " °Celcius";
+            tempday1.innerHTML = tempOne + "° Celcius";
+            tempday2.innerHTML = tempTwo + "° Celcius";
+            tempday3.innerHTML = tempThree + "° Celcius";
+            tempday4.innerHTML = tempFour + "° Celcius";
+            tempday5.innerHTML = tempFive + "° Celcius";
             console.log(data['list']);
 
             // fill in descriptions
-            descday1.innerHTML = "weather: " + frequency(dayOneDescription);
-            descday2.innerHTML = "weather: " + frequency(dayTwoDescription);
-            descday3.innerHTML = "weather: " + frequency(dayThreeDescription);
-            descday4.innerHTML = "weather: " + frequency(dayFourDescription);
-            descday5.innerHTML = "weather: " + frequency(dayFiveDescription);
+            descday1.innerHTML =  frequency(dayOneDescription);
+            descday2.innerHTML =  frequency(dayTwoDescription);
+            descday3.innerHTML =  frequency(dayThreeDescription);
+            descday4.innerHTML =  frequency(dayFourDescription);
+            descday5.innerHTML =  frequency(dayFiveDescription);
+
+
 
 
         })

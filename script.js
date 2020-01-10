@@ -72,7 +72,20 @@ button.addEventListener("click", function () {
                 dayFiveDescription.push(dayFive[i]['weather'][0]['description']);
             }
 
+            let dayOneIcon =[];
+            let dayTwoIcon =[];
+            let dayThreeIcon =[];
+            let dayFourIcon =[];
+            let dayFiveIcon =[];
 
+
+            for (let i = 0; i < 8 ; i++) {
+                dayOneIcon.push(dayOne[i]['weather'][0]['icon']);
+                dayTwoIcon.push(dayTwo[i]['weather'][0]['icon']);
+                dayThreeIcon.push(dayThree[i]['weather'][0]['icon']);
+                dayFourIcon.push(dayFour[i]['weather'][0]['icon']);
+                dayFiveIcon.push(dayFive[i]['weather'][0]['icon']);
+            }
 
 
 // get the average temperature for each day
@@ -83,29 +96,7 @@ button.addEventListener("click", function () {
             let tempFour = averageTemp(dayFourTemps);
             let tempFive = averageTemp(dayFiveTemps);
 
-            //most frequent element in description arrays
-            //used this source for the most frequent function, has very good understandable  structure
-            //https://medium.com/@AmJustSam/how-to-find-most-frequent-item-of-an-array-12015df68c65
 
-            function frequency(array){
-                let counts = {};
-                let compare = 0;
-                let mostFrequent;
-                for(let i = 0, len = array.length; i < len; i++){
-                    let word = array[i];
-
-                    if(counts[word] === undefined){
-                        counts[word] = 1;
-                    }else{
-                        counts[word] = counts[word] + 1;
-                    }
-                    if(counts[word] > compare){
-                        compare = counts[word];
-                        mostFrequent = array[i];
-                    }
-                }
-                return mostFrequent;
-            }
             // fill in temperatures
             tempday1.innerHTML = tempOne + "° Celcius";
             tempday2.innerHTML = tempTwo + "° Celcius";
@@ -115,11 +106,20 @@ button.addEventListener("click", function () {
             console.log(data['list']);
 
             // fill in descriptions
-            descday1.innerHTML =  frequency(dayOneDescription);
-            descday2.innerHTML =  frequency(dayTwoDescription);
-            descday3.innerHTML =  frequency(dayThreeDescription);
-            descday4.innerHTML =  frequency(dayFourDescription);
-            descday5.innerHTML =  frequency(dayFiveDescription);
+            console.log(dayThreeDescription);
+            descday1.innerHTML =  dayOneDescription[4];
+            descday2.innerHTML =  dayTwoDescription[4];
+            descday3.innerHTML =  dayThreeDescription[4];
+            descday4.innerHTML =  dayFourDescription[4];
+            descday5.innerHTML =  dayFiveDescription[4];
+
+
+            //Set images
+            imageOne.setAttribute('src', "http://openweathermap.org/img/wn/"+dayOneIcon[4]+".png");
+            imageTwo.setAttribute('src', "http://openweathermap.org/img/wn/"+dayTwoIcon[4]+".png");
+            imageThree.setAttribute('src', "http://openweathermap.org/img/wn/"+dayThreeIcon[4]+".png");
+            imageFour.setAttribute('src', "http://openweathermap.org/img/wn/"+dayFourIcon[4]+".png");
+            imageFive.setAttribute('src', "http://openweathermap.org/img/wn/"+dayFiveIcon[4]+".png");
 
 
 

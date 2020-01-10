@@ -12,6 +12,14 @@ let descday2 = document.getElementById("description2");
 let descday3 = document.getElementById("description3");
 let descday4 = document.getElementById("description4");
 let descday5 = document.getElementById("description5");
+let imageOne = document.getElementById("imageOne");
+let imageTwo = document.getElementById("imageTwo");
+let imageThree = document.getElementById("imageThree");
+let imageFour = document.getElementById("imageFour");
+let imageFive = document.getElementById("imageFive");
+
+
+
 
 
 
@@ -55,22 +63,19 @@ button.addEventListener("click", function () {
             let dayThreeDescription = [];
             let dayFourDescription = [];
             let dayFiveDescription = [];
-        
+
             for (let i = 0; i < 8 ; i++) {
                 dayOneDescription.push(dayOne[i]['weather'][0]['description']);
                 dayTwoDescription.push(dayTwo[i]['weather'][0]['description']);
                 dayThreeDescription.push(dayThree[i]['weather'][0]['description']);
                 dayFourDescription.push(dayFour[i]['weather'][0]['description']);
                 dayFiveDescription.push(dayFive[i]['weather'][0]['description']);
-
             }
 
 
 
 
-
-
-            //average temperature per day
+// get the average temperature for each day
             let averageTemp = arr => Math.floor(((arr.reduce((a,b) => a + b, 0) / arr.length)-273.15));
             let tempOne = averageTemp(dayOneTemps);
             let tempTwo = averageTemp(dayTwoTemps);
@@ -81,10 +86,11 @@ button.addEventListener("click", function () {
             //most frequent element in description arrays
             //used this source for the most frequent function, has very good understandable  structure
             //https://medium.com/@AmJustSam/how-to-find-most-frequent-item-of-an-array-12015df68c65
-            let counts = {};
-            let compare = 0;
-            let mostFrequent;
+
             function frequency(array){
+                let counts = {};
+                let compare = 0;
+                let mostFrequent;
                 for(let i = 0, len = array.length; i < len; i++){
                     let word = array[i];
 
@@ -100,9 +106,6 @@ button.addEventListener("click", function () {
                 }
                 return mostFrequent;
             }
-
-
-
             // fill in temperatures
             tempday1.innerHTML = tempOne + "° Celcius";
             tempday2.innerHTML = tempTwo + "° Celcius";

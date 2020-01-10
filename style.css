@@ -19,3 +19,13 @@ body {
  {
     background: lightblue;
 }
+
+ #imageOne,
+ #imageTwo,
+ #imageThree,
+ #imageFour,
+ #imageFive
+ {
+     width: 40px;
+     height: 40px;
+ }

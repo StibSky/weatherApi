@@ -23,11 +23,12 @@ let imageFive = document.getElementById("imageFive");
 
 
 button.addEventListener("click", function () {
-
     setBgImage();
+
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+input.value+'&appid=31a8f4d05ccba8c89d8dcd4ee4fbec1c')
         .then(link => link.json())
         .then(data =>  {
+
             let nameValue = data['city']['name'];
             cityName.innerHTML = nameValue;
             let infoPerDay = data['list'];
@@ -97,6 +98,7 @@ button.addEventListener("click", function () {
             let tempThree = averageTemp(dayThreeTemps);
             let tempFour = averageTemp(dayFourTemps);
             let tempFive = averageTemp(dayFiveTemps);
+
 
 
             // fill in temperatures

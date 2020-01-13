@@ -21,7 +21,6 @@ let imageFive = document.getElementById("imageFive");
 
 
 
-
 button.addEventListener("click", function () {
     setBgImage();
 

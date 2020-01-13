@@ -7,25 +7,39 @@
 }
 
 body {
-    background: url("images/papyrus.png");
+    background-size: cover;
 }
 
 
- #card1,
+#card1 {
+    background: #ffde52;
+    opacity: 0.9;
+}
+
  #card2,
  #card3,
  #card4,
  #card5
  {
-    background: lightblue;
+    background: #baffc6;
+     opacity: 0.9;
 }
 
- #imageOne,
+#imageOne {
+    width: 100px;
+    height: 100px;
+}
+
  #imageTwo,
  #imageThree,
  #imageFour,
  #imageFive
  {
-     width: 40px;
-     height: 40px;
+     width: 70px;
+     height: 70px;
+ }
+
+ #cityname {
+     color: white;
+    text-shadow: 2px 2px 6px #001101;
  }

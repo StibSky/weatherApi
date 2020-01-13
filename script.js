@@ -22,10 +22,9 @@ let imageFive = document.getElementById("imageFive");
 
 
 
-
-
 button.addEventListener("click", function () {
 
+    setBgImage();
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+input.value+'&appid=31a8f4d05ccba8c89d8dcd4ee4fbec1c')
         .then(link => link.json())
         .then(data =>  {
@@ -35,7 +34,10 @@ button.addEventListener("click", function () {
             let slicer = (start, end)=> {
                 return infoPerDay.slice(start,end)
             };
+
             //slice each day
+            //it is WAY smarter to only slice after the for loop, first get an array of all the data
+            //for now I'll stick to my own ways
             let dayOne = slicer(0,8);
             let dayTwo = slicer(8,16);
             let dayThree = slicer(16,24);
@@ -129,3 +131,13 @@ button.addEventListener("click", function () {
         .catch(error => alert("not a city name"))
 
 });
+
+async function setBgImage() {
+     let response = await fetch('https://api.unsplash.com/search/photos?query=$'+input.value+'&client_id=8b3303518e733b03bb9fbe890041915da381de31ef0602ad71dc8adfd4b79f83');
+     let data = await response.json();
+     let countryImage = data['results'][4]['urls']['regular'];
+     console.log(data);
+     console.log(countryImage);
+    document.body.style.backgroundImage = `url(${countryImage})`;
+    console.log(document.body.style.backgroundImage)
+}

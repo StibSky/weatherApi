@@ -62,12 +62,6 @@ button.addEventListener("click", function () {
             weekdays[5] = "Friday";
             weekdays[6] = "Saturday";
             weekdays[7] = "Sunday";
-            weekdays[8] = "Monday";
-            weekdays[9] = "Tuesday";
-            weekdays[10] = "Wednesday";
-            weekdays[11] = "Thursday";
-            weekdays[12] = "Friday";
-            weekdays[13] = "Saturday";
             console.log(weekdays[toDay.getDay()]);
             console.log(toDay.getDay());
 
